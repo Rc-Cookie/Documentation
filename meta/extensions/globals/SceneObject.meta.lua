@@ -1,0 +1,36 @@
+---@meta
+
+--- Base class for all objects in the scene; has a transform.
+---@class SceneObject: SimObject
+---@field disableCollision   fun(self: self)
+---@field enableCollision    fun(self: self)
+---@field getEulerRotation   fun(self: self): vec3
+---@field getForwardVector   fun(self: self): vec3
+---@field getObjBox          fun(self: self): Box3F Bounding box in local coordinates
+---@field getObjectBox       fun(self: self): Box3F Bounding box in local coordinates
+---@field position           MatrixF Actually translation and rotation matrix (same as `rotation` and `getTransform()`). A copy of the real one.
+---@field getPosition        fun(self: self): vec3
+---@field getPositionXYZ     fun(self: self): number, number, number
+---@field setPosition        fun(self: self, pos: vec3)
+---@field setPositionXYZ     fun(self: self, x: number, y: number, z: number)
+---@field getRenderTransform fun(self: self): MatrixF
+---@field rotation           MatrixF Actually rotation and translation matrix (same as `position` and `getTransform()`). A copy of the real one.
+---@field getRotation        fun(self: self): QuatF
+---@field setPosRot          fun(self: self, posX: number, posY: number, posZ: number, rotX: number, rotY: number, rotZ: number, rotW: number)
+---@field scale              vec3
+---@field getScale           fun(self: self): vec3
+---@field setScale           fun(self: self, scale: vec3)
+---@field setScaleXYZ        fun(self: self, x: number, y: number, z: number)
+---@field getTransform       fun(self: self): MatrixF
+---@field setTransform       fun(self: MatrixF)
+---@field getTransformF      function
+---@field setTransformF      function
+---@field getType            fun(self: self): integer
+---@field getWorldBox        fun(self: self): Box3F
+---@field getWorldBoxCenter  fun(self: self): Box3F
+---@field getWorldTransform  fun(self: self): MatrixF
+---@field isGlobalBounds     fun(self: self): boolean
+
+--- Constructor
+---@return SceneObject
+function SceneObject() end
